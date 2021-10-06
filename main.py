@@ -1,4 +1,3 @@
-
 def start_consumer():
     """
     Here the game starts

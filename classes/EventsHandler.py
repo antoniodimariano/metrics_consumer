@@ -1,6 +1,8 @@
 from psycopg2 import pool
 import psycopg2.extras
 import logging, os
+from datetime import datetime, timezone
+
 logger = logging.getLogger()
 logging.basicConfig(
     format='%(asctime)s:%(levelname)s:%(message)s', level=logging.INFO
@@ -8,7 +10,7 @@ logging.basicConfig(
 logger.setLevel(os.environ.get("logging_level", logging.INFO))
 
 
-class ConnectionFromPool(object):
+class ConnectionFromPool:
     """
     Class to manage the PostgreSQL Connection Pool and run queries
 
@@ -45,8 +47,6 @@ class ConnectionFromPool(object):
         self.connection_pool.putconn(self.connection)
 
 
-
-
 class EventHandler:
     def __init__(self, connection_params: str, min_thread: int = 1, max_thread: int = 200):
         self.connection_pool = pool.ThreadedConnectionPool(min_thread, max_thread, connection_params)
@@ -67,10 +67,10 @@ class EventHandler:
             http_status = str(event_payload.get('http_status'))
             elapsed_time = str(event_payload.get('elapsed_time'))
             pattern_verified = str(event_payload.get('pattern_verified'))
-
-            query = "INSERT INTO metrics (url, http_status,elapsed_time, day, month, year, pattern_verified) VALUES (%s, %s, %s, %s, %s, %s, %s) ON CONFLICT DO NOTHING RETURNING *"
+            timestamp = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+            query = "INSERT INTO metrics (url, http_status,elapsed_time, day, month, year, time,pattern_verified) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) ON CONFLICT DO NOTHING RETURNING *"
             data_to_insert = (url, http_status, elapsed_time, datetime.date.today().day, datetime.date.today().month,
-                              datetime.date.today().year, pattern_verified)
+                              datetime.date.today().year, timestamp, pattern_verified)
             if ConnectionFromPool(self.connection_pool).write_query(query=query, params=data_to_insert):
                 logger.info(f'Metric {data_to_insert} stored')
                 return True

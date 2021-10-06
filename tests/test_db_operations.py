@@ -19,8 +19,8 @@ class TestDB(unittest.TestCase):
 
     def test_b_test_Write(self):
         connection_1 = self.connection_pool.getconn()
-        query = "INSERT INTO metrics (url, http_status,elapsed_time, day, month, year, pattern_verified) VALUES (%s, %s, %s, %s, %s, %s, %s) ON CONFLICT DO NOTHING RETURNING *"
-        params = ("http://test.com", '200', '0.2', '02', '10', '2021', 'True')
+        query = "INSERT INTO metrics (url, http_status,elapsed_time, day, month, year, time,pattern_verified) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) ON CONFLICT DO NOTHING RETURNING *"
+        params = ("http://test.com", '200', '0.2', '02', '10', '2021','22:21:36.168319', 'True')
         cursor_1 = connection_1.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
         cursor_1.execute(query, params)
         connection_1.commit()

@@ -31,7 +31,7 @@ jobs:
       - run: |
           psql \
           -d "postgresql://postgresql:test123@localhost/test?sslmode=disable" \
-          -c "CREATE TABLE metrics (id serial NOT NULL PRIMARY KEY, url TEXT, http_status TEXT, day TEXT, month TEXT, year TEXT, elapsed_time TEXT, pattern_verified TEXT);"
+          -c "CREATE TABLE metrics (id serial NOT NULL PRIMARY KEY, url TEXT, http_status TEXT, day TEXT, month TEXT, year TEXT, time TEXT,elapsed_time TEXT, pattern_verified TEXT);"
 
       - run:
           name: Retrieve Kafka C Handler

@@ -12,6 +12,7 @@ This service is responsible for consuming messages about metrics being produced 
 The main action of this service is to store the incoming message into a PostgreSQL database.
 
 
+
 # Requirements
 
 * Python >=3.8
