@@ -1,7 +1,6 @@
 from psycopg2 import pool
 import psycopg2.extras
 import logging, os
-from datetime import datetime, timezone
 
 logger = logging.getLogger()
 logging.basicConfig(
@@ -63,11 +62,13 @@ class EventHandler:
         """
         try:
             import datetime
+            from datetime import timezone
+
             url = event_payload.get('url')
             http_status = str(event_payload.get('http_status'))
             elapsed_time = str(event_payload.get('elapsed_time'))
             pattern_verified = str(event_payload.get('pattern_verified'))
-            timestamp = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+            timestamp = datetime.datetime.now(timezone.utc).time().isoformat()
             query = "INSERT INTO metrics (url, http_status,elapsed_time, day, month, year, time,pattern_verified) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) ON CONFLICT DO NOTHING RETURNING *"
             data_to_insert = (url, http_status, elapsed_time, datetime.date.today().day, datetime.date.today().month,
                               datetime.date.today().year, timestamp, pattern_verified)
