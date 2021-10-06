@@ -3,7 +3,7 @@
 
 #### Author: Antonio Di Mariano - antonio.dimariano@gmail.com
 
-##Description
+## Description
 
 This service is part of the Websites Monitoring Application, a small distributed application 
 that aims to produce and collect metrics about the availability of one or more websites. 
