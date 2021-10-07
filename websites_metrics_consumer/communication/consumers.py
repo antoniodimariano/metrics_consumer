@@ -1,9 +1,9 @@
 import logging, os
-from typing import Union, Optional
+from typing import Union
 from confluent_kafka import KafkaError
 from confluent_kafka.avro import AvroConsumer
 from concurrent.futures import ThreadPoolExecutor
-from classes.EventsHandler import EventHandler
+from websites_metrics_consumer.classes.EventsHandler import EventHandler
 
 logger = logging.getLogger()
 logging.basicConfig(
