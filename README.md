@@ -67,6 +67,22 @@ If you are using a Broker that uses `SSL`, like Aiven.com, you need to download 
 
 for more information about SSL and Kafka please read https://docs.confluent.io/3.0.0/kafka/ssl.html
 
+
+Example of your project folder 
+
+```text
+myprojectname/
+|------configuration/
+            __init__.py
+            ca.pem
+            service.cert
+            service.key
+|------venv
+|main.py
+|requirements.txt            
+
+```
+
 | ENV Variable  | VALUE | DESCRIPTION                                                                       |
 |---------------|------|------------------------------------------------------------------------------------|
 | brokers    | string   | Required. The FQDN of the Apache Kafka Brokers.|
