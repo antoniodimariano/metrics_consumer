@@ -5,12 +5,12 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name='websites_metrics_consumer_beta',
-    version='1.0.2',
+    name='websites_metrics_consumer',
+    version='0.0.1',
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     install_requires=["psycopg2","confluent_kafka","avro-python3","requests"],
-    url='',
-    license='',
+    url='https://github.com/antoniodimariano/metrics_consumer',
+    license='Apache 2.0',
     python_requires='>=3.6',
     author='Antonio Di Mariano',
     author_email='antonio.dimariano@gmail.com',
@@ -19,7 +19,7 @@ setup(
     long_description_content_type="text/markdown",
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: Apache 2.0",
         "Operating System :: OS Independent",
     ]
 )

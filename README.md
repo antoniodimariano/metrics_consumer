@@ -11,6 +11,25 @@ that aims to produce and collect metrics about the availability of one or more w
 This service is responsible for consuming messages about metrics being produced to an Apache Kafka Avro Topic by a different service.
 The main action of this service is to store the incoming message into a PostgreSQL database.
 
+# Run
+
+If you want to run from the source code, go to the directory `websites_metrics_consumer` and run `python main`
+
+If you want to use it as package (preferred may) install  `pip3 install websites_metrics_consumer`
+
+Then
+
+1. Set the ENV variables as show in this README.md
+2. Then use it this way
+
+```python
+def consume_message():
+    from websites_metrics_consumer.main import start_consumer
+    start_consumer()
+    
+
+
+```
 
 
 # Requirements
