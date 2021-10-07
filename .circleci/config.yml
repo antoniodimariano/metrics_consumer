@@ -49,6 +49,7 @@ jobs:
       - run:
           name: Pubish package
           command: |
+            pip3 install cryptography
             python3 -m pip install --upgrade build
             pip3 install twine
             python -m build
