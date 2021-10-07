@@ -49,6 +49,7 @@ jobs:
       - run:
           name: Pubish package
           command: |
+            pip3 install --upgrade pip
             sudo apt-get install build-essential libssl-dev libffi-dev python-dev
             pip3 install cryptography
             python3 -m pip install --upgrade build
