@@ -52,7 +52,7 @@ jobs:
             python3 -m pip install --upgrade build
             pip3 install twine
             python -m build
-             python3 -m twine upload dist/*
+            python3 -m twine upload dist/*
       - store_test_results:
           path: test-results
       - store_artifacts:
