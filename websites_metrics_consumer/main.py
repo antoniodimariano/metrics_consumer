@@ -3,9 +3,9 @@ def start_consumer():
     Here the game starts
     :return:
     """
-    from helpers.confluent_kafka_configuration_builder import \
+    from websites_metrics_consumer.helpers.confluent_kafka_configuration_builder import \
         build_consumer_configuration_from_os_env_vars
-    from communication.consumers import MetricsConsumer
+    from websites_metrics_consumer.communication.consumers import MetricsConsumer
     import os
     consumer_topics = [os.environ.get('consumer_topics', 'websites_metrics')]
     persistence_conf = os.environ.get('persistence_conf')

@@ -1,5 +1,5 @@
 import unittest
-from classes.EventsHandler import EventHandler
+from websites_metrics_consumer.classes.EventsHandler import EventHandler
 connections_params = 'postgresql://postgresql:test123@localhost/test?sslmode=disable'
 class TestDB(unittest.TestCase):
     def setUp(self):

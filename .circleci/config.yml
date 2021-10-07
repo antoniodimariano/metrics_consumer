@@ -46,6 +46,16 @@ jobs:
           command: |
             python3 -m unittest tests/test_db_operations.py
             python3 -m unittest tests/test_events_handler_class.py
+      - run:
+          name: Pubish package
+          command: |
+            pip3 install --upgrade pip
+            sudo apt-get install build-essential libssl-dev libffi-dev python-dev
+            pip3 install cryptography
+            python3 -m pip install --upgrade build
+            pip3 install twine
+            python -m build
+            python3 -m twine upload dist/*
       - store_test_results:
           path: test-results
       - store_artifacts:
@@ -54,7 +64,6 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
+  build_and_publish:
     jobs:
       - build
