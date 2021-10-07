@@ -8,7 +8,7 @@ setup(
     name='websites_metrics_consumer_beta',
     version='1.0.1',
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
-    install_requires=["psycopg2==2.9.1","confluent_kafka==1.7.0"],
+    install_requires=["psycopg2","confluent_kafka"],
     url='',
     license='',
     python_requires='>=3.6',
