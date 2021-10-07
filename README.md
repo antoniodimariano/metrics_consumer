@@ -15,7 +15,7 @@ The main action of this service is to store the incoming message into a PostgreS
 
 If you want to run from the source code, go to the directory `websites_metrics_consumer` and run `python main`
 
-If you want to use it as package (preferred may) install  `pip3 install websites_metrics_consumer`
+If you want to use it as package (suggested method) install  `pip3 install websites_metrics_consumer`
 
 Then
 
