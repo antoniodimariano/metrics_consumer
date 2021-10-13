@@ -6,7 +6,7 @@
 # Websites Metrics Consumer
 
 #### Author: Antonio Di Mariano - antonio.dimariano@gmail.com
-8a8a7146-c00c-47f2-84fb-b544564c9ec1
+
 ## Description
 
 This service is part of the Websites Monitoring Application, a small distributed application 
