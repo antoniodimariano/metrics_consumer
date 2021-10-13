@@ -54,7 +54,6 @@ jobs:
             coverage xml
       - codecov/upload:
           file: './coverage.xml'
-          token: $CODECOV_TOKEN
       - when:
           condition: <<parameters.publish_pypi>>
           steps:
