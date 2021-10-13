@@ -1,4 +1,8 @@
 [![CircleCI](https://circleci.com/gh/antoniodimariano/metrics_consumer/tree/master.svg?style=svg&circle-token=f7da2eeb3c4a1dbbe2705fda45fdffe02e8ef1ce)](https://circleci.com/gh/antoniodimariano/metrics_consumer/tree/master)
+[![codecov](https://codecov.io/gh/antoniodimariano/metrics_consumer/branch/master/graph/badge.svg?token=4DAZ88HVMW)](https://codecov.io/gh/antoniodimariano/websites_metrics_consumer)
+![PyPI - License](https://img.shields.io/pypi/l/websites-metrics-consumer)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/websites-metrics-consumer)
+
 # Websites Metrics Consumer
 
 #### Author: Antonio Di Mariano - antonio.dimariano@gmail.com
