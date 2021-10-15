@@ -1,5 +1,6 @@
 [![CircleCI](https://circleci.com/gh/antoniodimariano/metrics_consumer/tree/master.svg?style=svg&circle-token=f7da2eeb3c4a1dbbe2705fda45fdffe02e8ef1ce)](https://circleci.com/gh/antoniodimariano/metrics_consumer/tree/master)
 [![codecov](https://codecov.io/gh/antoniodimariano/metrics_consumer/branch/master/graph/badge.svg?token=G6OQ1T115F)](https://codecov.io/gh/antoniodimariano/metrics_consumer)
+[![lint_python](https://github.com/antoniodimariano/metrics_consumer/actions/workflows/lint_test.yml/badge.svg)](https://github.com/antoniodimariano/metrics_consumer/actions/workflows/lint_test.yml)
 ![PyPI - License](https://img.shields.io/pypi/l/websites-metrics-consumer)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/websites-metrics-consumer)
 
