@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='websites_metrics_consumer',
-    version='0.0.3',
+    version='0.0.4',
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     install_requires=["psycopg2","confluent_kafka","avro-python3","requests"],
     url='https://github.com/antoniodimariano/metrics_consumer',
